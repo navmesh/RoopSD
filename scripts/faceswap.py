@@ -14,9 +14,9 @@ from scripts.faceswap_version import version_flag
 import os
 
 def get_models():
-    models_path = os.path.join(scripts.basedir(), "extensions/ghepmat2/models/*")
+    models_path = os.path.join(scripts.basedir(), "extensions/RoopSD/models/*")
     models = glob.glob(models_path)
-    models_path = os.path.join(scripts.basedir(), "models/ghepmat2/*")
+    models_path = os.path.join(scripts.basedir(), "models/RoopSD/*")
     models += glob.glob(models_path)
     models = [x for x in models if x.endswith(".onnx") or x.endswith(".pth")]
     return models
@@ -51,7 +51,7 @@ class FaceSwapScript(scripts.Script):
                 
                 models = get_models()
                 if(len(models) == 0) :
-                    logger.warning("You should at least have one model in models directory, please read the doc here : https://github.com/Ynn/sd-webui-faceswap/")                    
+                    logger.warning("You should at least have one model in models directory, please read the doc here : https://github.com/phamhungd/RoopSD")                    
                     model = gr.inputs.Dropdown(choices=models, label="Model not found, please download one and reload automatic 1111")
                 else :
                     model = gr.inputs.Dropdown(choices=models, label="Model", default=models[0])
