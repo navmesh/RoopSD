@@ -1,4 +1,4 @@
-version_flag = "v0.0.6"
+version_flag = "SDVN"
 
 from scripts.faceswap_logging import logger
 
